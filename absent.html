@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+><html>
+    <head>
+        <title>Absent students</title>
+    </head>
+    <body>
+        <h2>Absent student</h2>
+        <ul id="list"></ul>
+        
+        <a href="student_list.html">Back</a>
+
+        <script>
+            let Students = JSON.parse(localStorage.getItem("Students")) || [];
+
+            let list = document.getElementById("list");
+
+            Students.forEach(function(s){
+                if (s.status === "Absent") {
+                    let li = document.createElement("li");
+                    li.innerHTML = s.Name;
+                    list.appendChild(li);
+                }
+            });
+        </script>
+        
+    </body>
+</html>
