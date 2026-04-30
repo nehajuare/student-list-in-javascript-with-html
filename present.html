@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+><html>
+    <head>
+        <title>Present students</title>
+    </head>
+    <body>
+        <h2>present student</h2>
+        <ul id="list"></ul>
+        
+        <a href="student_list.html">Back</a>
+
+        <script>
+            let Students = JSON.parse(localStorage.getItem("Students")) || [];
+
+            let list = document.getElementById("list");
+
+            Students.forEach(function(s){
+                if (s.status === "Present") {
+                    let li = document.createElement("li");
+                    li.innerHTML = s.Name;
+                    list.appendChild(li);
+                }
+            });
+        </script>
+    </body>
+</html>
